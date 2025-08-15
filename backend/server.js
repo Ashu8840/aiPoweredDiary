@@ -1,8 +1,8 @@
-require('dotenv').config();
-const express = require('express');
-const http = require('http');
-const cors = require('cors');
-const connectDB = require('./config/db');
+import 'dotenv/config';
+import express from 'express';
+import http from 'http';
+import cors from 'cors';
+import connectDB from './config/db.js';
 
 // Connect to Database
 connectDB();
