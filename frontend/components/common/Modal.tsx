@@ -1,5 +1,5 @@
 import React from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence, Variants } from 'framer-motion';
 
 interface ModalProps {
   isOpen: boolean;
@@ -8,12 +8,12 @@ interface ModalProps {
   children: React.ReactNode;
 }
 
-const backdrop = {
+const backdrop: Variants = {
   visible: { opacity: 1 },
   hidden: { opacity: 0 },
 };
 
-const modal = {
+const modal: Variants = {
   hidden: { y: "-50vh", opacity: 0 },
   visible: { 
     y: "0", 

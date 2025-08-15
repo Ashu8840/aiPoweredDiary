@@ -3,6 +3,7 @@ import express from 'express';
 import http from 'http';
 import cors from 'cors';
 import connectDB from './config/db.js';
+import apiRouter from './routes/api.js';
 
 // Connect to Database
 connectDB();
@@ -19,7 +20,7 @@ app.get('/', (req, res) => {
 });
 
 // Use API routes
-app.use('/api', require('./routes/api'));
+app.use('/api', apiRouter);
 
 const PORT = process.env.PORT || 3001;
 
