@@ -1,21 +1,25 @@
-
 import React from 'react';
+import { motion } from 'framer-motion';
 
 interface CardProps {
-  title: string;
   children: React.ReactNode;
+  className?: string;
+  padding?: 'p-4' | 'p-6' | 'p-8';
 }
 
-const Card: React.FC<CardProps> = ({ title, children }) => {
+const cardVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
+};
+
+const Card: React.FC<CardProps> = ({ children, className = '', padding = 'p-6' }) => {
   return (
-    <div className="bg-slate-800 rounded-xl shadow-2xl overflow-hidden border border-slate-700">
-      <div className="p-8">
-        <h2 className="text-3xl font-bold text-slate-100 mb-6 border-b border-slate-700 pb-4">
-          {title}
-        </h2>
-        <div>{children}</div>
-      </div>
-    </div>
+    <motion.div
+      variants={cardVariants}
+      className={`bg-card/70 backdrop-blur-xl rounded-2xl border border-white/10 shadow-lg ${padding} ${className}`}
+    >
+      {children}
+    </motion.div>
   );
 };
 

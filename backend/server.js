@@ -1,14 +1,30 @@
+require('dotenv').config();
+const express = require('express');
 const http = require('http');
+const cors = require('cors');
+const connectDB = require('./config/db');
 
-const hostname = '127.0.0.1';
-const port = 3001;
+// Connect to Database
+connectDB();
 
-const server = http.createServer((req, res) => {
-  res.statusCode = 200;
-  res.setHeader('Content-Type', 'text/plain');
-  res.end('Hello from the backend!\n');
+const app = express();
+
+// Middleware
+app.use(cors());
+app.use(express.json());
+
+// Define a simple route for testing
+app.get('/', (req, res) => {
+  res.send('API is running...');
 });
 
-server.listen(port, hostname, () => {
-  console.log(`Server running at http://${hostname}:${port}/`);
+// Use API routes
+app.use('/api', require('./routes/api'));
+
+const PORT = process.env.PORT || 3001;
+
+const server = http.createServer(app);
+
+server.listen(PORT, () => {
+  console.log(`Server running in ${process.env.NODE_ENV} mode on port ${PORT}`);
 });

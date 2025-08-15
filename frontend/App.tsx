@@ -1,16 +1,20 @@
-
 import React from 'react';
-import Header from './components/Header';
-import MainContent from './components/MainContent';
-import Footer from './components/Footer';
+import Header from './components/layout/Header';
+import Footer from './components/layout/Footer';
+import Dashboard from './pages/Dashboard';
+import { ThemeProvider } from './contexts/ThemeContext';
 
 const App: React.FC = () => {
   return (
-    <div className="flex flex-col min-h-screen bg-slate-900 text-slate-200 font-sans">
-      <Header />
-      <MainContent />
-      <Footer />
-    </div>
+    <ThemeProvider>
+      <div className="flex flex-col min-h-screen bg-background text-text_primary font-sans transition-colors duration-500">
+        <Header />
+        <main className="flex-grow">
+          <Dashboard />
+        </main>
+        <Footer />
+      </div>
+    </ThemeProvider>
   );
 };
 
