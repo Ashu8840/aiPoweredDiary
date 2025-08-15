@@ -5,6 +5,23 @@
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Aura Diary - Your Personal AI Journal</title>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              background: 'var(--background)',
+              background_light: 'var(--background-light)',
+              card: 'var(--card)',
+              primary: 'var(--primary)',
+              secondary: 'var(--secondary)',
+              text_primary: 'var(--text-primary)',
+              text_secondary: 'var(--text-secondary)',
+            }
+          },
+        }
+      }
+    </script>
     <script src="https://cdn.tailwindcss.com"></script>
     <script type="importmap">
       {
@@ -18,5 +35,6 @@
   </head>
   <body>
     <div id="root"></div>
+    <script type="module" src="/frontend/index.tsx"></script>
   </body>
 </html>
