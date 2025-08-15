@@ -10,13 +10,13 @@
   },
   "dependencies": {
     "react": "^19.1.1",
-    "framer-motion": "10.12.16",
+    "react-dom": "^19.1.1",
+    "dotenv": "^17.2.1",
     "express": "^5.1.0",
     "http": "^0.0.1-security",
-    "react-dom": "^19.1.1",
-    "mongoose": "^8.17.1",
     "cors": "^2.8.5",
-    "dotenv": "^17.2.1"
+    "mongoose": "^8.17.1",
+    "framer-motion": "^12.23.12"
   },
   "devDependencies": {
     "@types/node": "^22.14.0",

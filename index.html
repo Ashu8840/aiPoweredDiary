@@ -4,38 +4,30 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Aura Diary - Your Personal AI Journal</title>
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            colors: {
-              background: 'var(--background)',
-              background_light: 'var(--background-light)',
-              card: 'var(--card)',
-              primary: 'var(--primary)',
-              secondary: 'var(--secondary)',
-              text_primary: 'var(--text-primary)',
-              text_secondary: 'var(--text-secondary)',
-            }
-          },
-        }
-      }
-    </script>
+    <title>Aura Diary - Login</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(-10px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+      .animate-fade-in {
+        animation: fadeIn 0.5s ease-out forwards;
+      }
+    </style>
     <script type="importmap">
 {
   "imports": {
     "react": "https://esm.sh/react@18.2.0",
     "react-dom/client": "https://esm.sh/react-dom@18.2.0/client",
-    "framer-motion": "https://esm.sh/framer-motion@10.12.16",
-    "express": "https://esm.sh/express@^5.1.0",
-    "http": "https://esm.sh/http@^0.0.1-security",
     "react-dom/": "https://esm.sh/react-dom@^19.1.1/",
     "react/": "https://esm.sh/react@^19.1.1/",
-    "mongoose": "https://esm.sh/mongoose@^8.17.1",
+    "dotenv/": "https://esm.sh/dotenv@^17.2.1/",
+    "express": "https://esm.sh/express@^5.1.0",
+    "http": "https://esm.sh/http@^0.0.1-security",
     "cors": "https://esm.sh/cors@^2.8.5",
-    "dotenv/": "https://esm.sh/dotenv@^17.2.1/"
+    "mongoose": "https://esm.sh/mongoose@^8.17.1",
+    "framer-motion": "https://esm.sh/framer-motion@^12.23.12"
   }
 }
 </script>
